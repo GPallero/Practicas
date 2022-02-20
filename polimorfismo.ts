@@ -55,4 +55,4 @@ for(const guerrero of guerreros){
 // Luego Transpile el archivo TS a JS con el comando 'tsc polimorfismo.ts'
 
 // Antes de lo mencionado tuve que verificar las politicas de ejecución (about_Execution_Policies)
-// Utilice 'Set-ExecutionPolicy -Scope CurrentUser' 'Bypass'
+// Utilice 'Set-ExecutionPolicy -Scope CurrentUser' '...'
