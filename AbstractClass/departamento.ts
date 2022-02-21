@@ -1,4 +1,4 @@
-//Clase abstracta
+//Clase abstracta (Otro ejercicio)
 abstract class Department{
     //CONSTRUCTOR
     constructor(public name:string){}
@@ -35,3 +35,5 @@ department = new AccountingDepartment(); //Es posible crear y asignar una subcla
 department.printName();
 department.printMeeting();
 //department.generateReports(); // Error: departament no es de tipo AccountingDepartment, no es posible acceder 'generateReports'
+
+//Finalmente transpilamos con el comando 'tsc polimorfismo.ts', para esto es necesario tener instalado el paquete 'typescript'.
