@@ -12,13 +12,18 @@ function Saludo(){
 Mensaje(Saludo);
 
 //Otro ejemplo de función callback:
-function Sumar(N1, N2, callback){
-    let suma = N1 + N2;
-    return (callback(suma));
+function Operacion(N1, N2, callback){
+    return (callback(N1, N2));
 }
 
-function Resultado(suma){
-    console.log(suma)
+function Suma(operando1, operando2){
+    return operando1 + operando2;
 }
 
-Sumar(7, 10, Resultado)
+function Producto(operando1, operando2){
+    return operando1 * operando2;
+}
+
+//Aquí podemos ver más claramente el objetivo de una función callback:
+console.log(Operacion(7, 10, Suma))
+console.log(Operacion(7, 10, Producto))
