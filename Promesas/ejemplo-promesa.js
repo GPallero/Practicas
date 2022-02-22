@@ -1,10 +1,10 @@
 const division=(dividendo, divisor)=>{
 
-    return new Promise((resolved, rejected) => {
-        if (divisor == 0 || typeof dividendo != 'number' || typeof divisor != 'number' ){
-            rejected('No se puede realizar la división, alguno de los valores ingresados es incorrecto.');
+    return new Promise((resolve, reject) => {
+        if (divisor==0 || typeof(dividendo)!='number' || typeof(divisor)!='number' ){
+            reject('No se puede realizar la división, alguno de los valores ingresados es incorrecto.');
         }else{
-            resolved(dividendo/divisor);
+            resolve(dividendo/divisor);
         }
     })
 }
