@@ -35,72 +35,78 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var _this = this;
+//Simulamos una base de datos:
 var database = [
     { id: 1, nombre: 'Carolina' },
     { id: 2, nombre: 'Amaru' },
     { id: 3, nombre: 'Rodrigo' },
     { id: 4, nombre: 'Virginia' },
 ];
+//Creamos nuestra función para buscar usuarios por 'id'
 var buscarId = function (id) {
     var respuesta = database.find(function (elemento) { return elemento.id === id; });
+    //Creamos una promesa:
     var promesa = new Promise(function (resolve, reject) {
         setTimeout(function () {
+            //Si la 'id' es encontrada retornamos la respuesta
             if (respuesta) {
                 resolve(respuesta);
+                //De lo contrario informamos que no se encontro dicha 'id'
             }
             else {
                 reject("No se encontro el id ".concat(id, "."));
             }
         }, 2000);
     });
+    //finalmente devolvemos el resultado de nuestra promesa
     return promesa;
 };
+//Simulamos una aplicación:
 var app = function () { return __awaiter(_this, void 0, void 0, function () {
-    var tareas, _a, _b, _c, _d, _e, _f, _g, error_1;
-    return __generator(this, function (_h) {
-        switch (_h.label) {
+    var _a, _b, _c, _d, error_1;
+    return __generator(this, function (_e) {
+        switch (_e.label) {
             case 0:
+                // Informamos el inicio de tareas:
                 console.log('---Inicio tareas---');
-                _h.label = 1;
+                _e.label = 1;
             case 1:
-                _h.trys.push([1, 6, , 7]);
-                _b = (_a = Promise).all;
+                _e.trys.push([1, 4, , 5]);
+                // const tareas = Promise.all([
+                //     await buscarId(4), 
+                //     await buscarId(1)
+                // ]);
+                // console.log(Promise.all([await buscarId(4), await buscarId(1)]));
+                // console.log(tareas);
+                // console.log('--- Promise All Finalizado');
+                // const persona = await buscarId(2);
+                _b = (_a = console).log;
                 return [4 /*yield*/, buscarId(4)];
             case 2:
-                _c = [
-                    _h.sent()
-                ];
+                // const tareas = Promise.all([
+                //     await buscarId(4), 
+                //     await buscarId(1)
+                // ]);
+                // console.log(Promise.all([await buscarId(4), await buscarId(1)]));
+                // console.log(tareas);
+                // console.log('--- Promise All Finalizado');
+                // const persona = await buscarId(2);
+                _b.apply(_a, [_e.sent()]);
+                _d = (_c = console).log;
                 return [4 /*yield*/, buscarId(1)];
             case 3:
-                tareas = _b.apply(_a, [_c.concat([
-                        _h.sent()
-                    ])]);
-                // console.log(Promise.all([await buscarId(4), await buscarId(1)]));
-                console.log(tareas);
-                console.log('--- Promise All Finalizado');
-                // const persona = await buscarId(2);
-                _e = (_d = console).log;
-                return [4 /*yield*/, buscarId(4)];
+                _d.apply(_c, [_e.sent()]);
+                return [3 /*break*/, 5];
             case 4:
-                // const persona = await buscarId(2);
-                _e.apply(_d, [_h.sent()]);
-                _g = (_f = console).log;
-                return [4 /*yield*/, buscarId(1)];
-            case 5:
-                _g.apply(_f, [_h.sent()]);
-                return [3 /*break*/, 7];
-            case 6:
-                error_1 = _h.sent();
+                error_1 = _e.sent();
                 console.log('---', error_1);
-                return [3 /*break*/, 7];
-            case 7:
-                console.log('--- Fin tareas');
-                return [2 /*return*/];
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
         }
     });
 }); };
 app();
-console.log('--- Fin de todo.');
+// console.log('--- Fin de todo.');
 var sumar = function (a, b) {
     return a + b;
 };
