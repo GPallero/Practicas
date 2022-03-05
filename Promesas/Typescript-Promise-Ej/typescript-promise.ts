@@ -6,6 +6,7 @@ const database = [
     {id: 4, nombre:'Virginia'},
 ]
 
+console.log('A continuación veremos el await y el async en acción. Los resultados de las instrucciones de nuestro código no se mostraran en orden secuencial.')
 //Creamos nuestra función para buscar usuarios por 'id'
 const buscarId = (id:number): Promise<any> => {
     const respuesta = database.find(elemento => elemento.id === id)
@@ -36,14 +37,16 @@ const app = async() => {
         //     await buscarId(4), 
         //     await buscarId(1)
         // ]);
+        // console.log('fullfilled? ', tareas);
         
-        // console.log(Promise.all([await buscarId(4), await buscarId(1)]));
-        // console.log(tareas);
-        // console.log('--- Promise All Finalizado');
-        // const persona = await buscarId(2);
-        
-        console.log(await buscarId(4));
-        console.log(await buscarId(1));
+        console.log(Promise.all([
+            await buscarId(4), 
+            await buscarId(1)]), 'Promise.all() finalizado | Orden de tarea: 1 |'
+        );
+               
+        // Las promesas por separado:
+        console.log(await buscarId(4), ' Busqueda individual finalizada | Orden de tarea: 2 |');
+        console.log(await buscarId(1), ' Busqueda individual finalizada | Orden de tarea: 3 |');
 
     }catch (error) {
         console.log('---', error);
@@ -60,5 +63,5 @@ const sumar = (a:number, b:number) =>{
     return a + b;
 }
 
-console.log('Suma', sumar(3,8));
+console.log('Sumar: ', sumar(3,8), '| Orden de taera: 4 |');
 // buscarId(1);

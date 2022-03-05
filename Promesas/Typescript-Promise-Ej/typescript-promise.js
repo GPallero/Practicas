@@ -42,6 +42,7 @@ var database = [
     { id: 3, nombre: 'Rodrigo' },
     { id: 4, nombre: 'Virginia' },
 ];
+console.log('A continuación veremos el await y el async en acción. Los resultados de las instrucciones de nuestro código no se mostraran en orden secuencial.');
 //Creamos nuestra función para buscar usuarios por 'id'
 var buscarId = function (id) {
     var respuesta = database.find(function (elemento) { return elemento.id === id; });
@@ -63,45 +64,53 @@ var buscarId = function (id) {
 };
 //Simulamos una aplicación:
 var app = function () { return __awaiter(_this, void 0, void 0, function () {
-    var _a, _b, _c, _d, error_1;
-    return __generator(this, function (_e) {
-        switch (_e.label) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, error_1;
+    return __generator(this, function (_k) {
+        switch (_k.label) {
             case 0:
                 // Informamos el inicio de tareas:
                 console.log('---Inicio tareas---');
-                _e.label = 1;
+                _k.label = 1;
             case 1:
-                _e.trys.push([1, 4, , 5]);
+                _k.trys.push([1, 6, , 7]);
                 // const tareas = Promise.all([
                 //     await buscarId(4), 
                 //     await buscarId(1)
                 // ]);
-                // console.log(Promise.all([await buscarId(4), await buscarId(1)]));
-                // console.log(tareas);
-                // console.log('--- Promise All Finalizado');
-                // const persona = await buscarId(2);
+                // console.log('fullfilled? ', tareas);
                 _b = (_a = console).log;
+                _d = (_c = Promise).all;
                 return [4 /*yield*/, buscarId(4)];
             case 2:
+                _e = [
+                    _k.sent()
+                ];
+                return [4 /*yield*/, buscarId(1)];
+            case 3:
                 // const tareas = Promise.all([
                 //     await buscarId(4), 
                 //     await buscarId(1)
                 // ]);
-                // console.log(Promise.all([await buscarId(4), await buscarId(1)]));
-                // console.log(tareas);
-                // console.log('--- Promise All Finalizado');
-                // const persona = await buscarId(2);
-                _b.apply(_a, [_e.sent()]);
-                _d = (_c = console).log;
-                return [4 /*yield*/, buscarId(1)];
-            case 3:
-                _d.apply(_c, [_e.sent()]);
-                return [3 /*break*/, 5];
+                // console.log('fullfilled? ', tareas);
+                _b.apply(_a, [_d.apply(_c, [_e.concat([
+                            _k.sent()
+                        ])]), 'Promise.all() finalizado | Orden de tarea: 1 |']);
+                // Las promesas por separado:
+                _g = (_f = console).log;
+                return [4 /*yield*/, buscarId(4)];
             case 4:
-                error_1 = _e.sent();
+                // Las promesas por separado:
+                _g.apply(_f, [_k.sent(), ' Busqueda individual finalizada | Orden de tarea: 2 |']);
+                _j = (_h = console).log;
+                return [4 /*yield*/, buscarId(1)];
+            case 5:
+                _j.apply(_h, [_k.sent(), ' Busqueda individual finalizada | Orden de tarea: 3 |']);
+                return [3 /*break*/, 7];
+            case 6:
+                error_1 = _k.sent();
                 console.log('---', error_1);
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
+                return [3 /*break*/, 7];
+            case 7: return [2 /*return*/];
         }
     });
 }); };
@@ -110,5 +119,5 @@ app();
 var sumar = function (a, b) {
     return a + b;
 };
-console.log('Suma', sumar(3, 8));
+console.log('Sumar: ', sumar(3, 8), '| Orden de taera: 4 |');
 // buscarId(1);
