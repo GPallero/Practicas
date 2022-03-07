@@ -7,6 +7,7 @@ const server = http.createServer((request, response) =>{
     //Definimos una ruta y respondemos.
     if(request.url === '/'){
         response.write('Primer server con HTTP')
+        response.write('Esta forma de hacer servidores es vieja y en la actualidad no se utiliza.')
         response.end()
     }
 })
