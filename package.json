@@ -1,0 +1,23 @@
+{
+  "name": "Practicas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GPallero/Practicas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GPallero/Practicas/issues"
+  },
+  "homepage": "https://github.com/GPallero/Practicas#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
