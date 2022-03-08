@@ -24,3 +24,11 @@ server.listen(PORT, () =>{
 //Comandos de la terminal utilizados:
 // npm init -y
 // npm install express
+// En la terminal de gitbash:
+// Creamos el archivo de texto .gitignore: 
+// touch .gitignore
+// Agregamos al final del archivo .gitignore la carpeta 'node_modules' y todas sus subcarpetas.
+// echo "node_modules/" >> .gitignore
+// La siguiente linea remueve la carpeta 'node_modules' del control de git si esta fue agregada con anterioridad.
+// git rm -r --cached node_modules'
+// Así la carpeta 'node_modules' es ignorada al realizar el push a github.
